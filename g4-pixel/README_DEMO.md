@@ -4,8 +4,19 @@
 
 Where [`../g2-pixel7/`](../g2-pixel7/) and [`../g3-pixel8/`](../g3-pixel8/) reverse-engineered
 *read/write access* to the NPU while Google Camera drove it, this folder goes further: **driving the
-NPU directly, compiling custom graphs to it ahead-of-time, and running sub-byte-quantized models on
-it** — the things the top-level README calls a dead end for anything but vision.
+NPU directly, compiling custom graphs to it ahead-of-time, and dispatching sub-byte-quantized graphs
+on it** — the parts the top-level README calls a dead end for anything but vision.
+
+> ## ⚠️ Read this first — scope & what is NOT claimed
+> This folder is about getting graphs to **compile and dispatch on the NPU**: the compiler path, the
+> VII ioctl/dispatch mechanism, sub-byte weight packing, and the compile-cache that beats the ~60s
+> wall. **It is NOT a claim of coherent model output.**
+>
+> **Coherent generation at aggressive sub-byte quant (int4/int2/ternary) is UNSOLVED.** Several of
+> the artifacts here compile cleanly and run on the NPU but produce **incoherent / garbage text.**
+> "Compiles + dispatches on the NPU" and "generates coherent text" are two completely separate
+> claims — **only the first is made here.** Don't read any benchmark, DGC0, or compile result in this
+> repo as a working, coherent on-device LLM. It isn't one yet.
 
 ## What's here
 
