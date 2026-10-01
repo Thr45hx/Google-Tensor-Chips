@@ -29,6 +29,7 @@ on it** — the parts the top-level README calls a dead end for anything but vis
 | [`ternary-packer/`](ternary-packer/) | The sub-byte weight-tile packer (int4 / int2 / ternary), closed-form, validated 64/64 |
 | [`aot-models/`](aot-models/) | Example AOT-compiled DGC0 graph containers produced by the above |
 | [`scripts/`](scripts/) | `nnapi_maxpart.c` — drive the NNAPI delegate with full options (accelerator, partitions, cache) from C, no JVM |
+| [`CLOUD_TPU_REFERENCE.md`](CLOUD_TPU_REFERENCE.md) | XLA on a real Cloud TPU (v6e) as a reference oracle — how it tiles+packs int4, and the exact `+8`/bit-swap bridge to the DGC0 weight format |
 
 ## The short version
 
